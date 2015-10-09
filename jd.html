@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>JSON Sample</title>
+</head>
+<body>
+
+    <div id="placeholder"></div>
+
+    <div id="pc"></div>
+    <button>post</button>
+
+    <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script>
+
+
+    $("#pc").load("s.txt#di");
+    $("button").click(function(){
+        $.post("s.txt",{
+            name:"donald",
+            age:"40"
+        },
+
+        function(status){
+            alert("status" +status);
+
+        });
+    });
+
+  $.getJSON('data.json', function(data) {
+        var output="<ul>";
+        for (var i in data.users) {
+            output+="<li>" + data.users[i].firstName + " " + data.users[i].lastName + "--" + data.users[i].joined.month+"</li>";
+        }
+
+        output+="</ul>";
+        document.getElementById("placeholder").innerHTML=output;
+
+
+
+        for (var i in data.mani) {
+            output+="<li>" + data.mani[i].firstName + " " + data.mani[i].lastName + "--" + data.mani[i].joined.month+"</li>";
+        }
+
+        output+="</ul>";
+        document.getElementById("placeholder").innerHTML=output;
+  });
+    </script>
+</body>
+</html>

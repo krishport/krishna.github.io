@@ -1,0 +1,4 @@
+<h1> hai krishna this is ajax</h1>
+<div id="di">
+	<h2>hai babay</h2>
+</div>
